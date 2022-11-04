@@ -1,0 +1,76 @@
+.notes{
+    background-color: yellow;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 10px;
+    justify-content: space-between;
+    height: 200px;
+}
+.footer{
+display: flex;
+justify-content: space-between;
+}
+.notes h2{
+margin: 0px;
+
+}
+.notes img{
+    width: 20px;
+}
+
+.notesList{
+   margin: 10px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(278px,0.1fr));
+  
+  grid-gap:2rem;
+}
+
+
+.AddNotes{
+    background-color:rgb(0, 255, 221);
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 10px;
+    justify-content: space-between;
+    height: 200px;
+}
+.AddNotes textarea{
+margin-bottom: 5px;
+background-color:rgb(0, 255, 221);
+border: 0px;
+}
+.AddNotes textarea:focus{
+outline: 0px;
+}
+.AddNotes button{
+    border: 0px;
+    border-radius: 50px;
+}
+
+.footer button:hover{
+box-shadow: 10px;
+color: red;
+}
+
+.footer button:focus{
+    color: white;
+}
+
+.title{
+    background-color:rgb(0, 255, 221);
+    border: 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.title:focus{
+    background-color:rgb(0, 255, 221);
+    outline: 0px;
+}
