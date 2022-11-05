@@ -3,7 +3,7 @@ import { Note } from './Note'
 import styles from './components.module.css'
 import { AddNote } from './AddNote'
 export const NotesList = ({notes,addnote,DeleteButton}) => {  
- 
+
   return (
     <div className={styles.notesList}>
       {notes.map((note)=>{
@@ -15,13 +15,14 @@ export const NotesList = ({notes,addnote,DeleteButton}) => {
         date= {note.date}
         DeleteButton ={DeleteButton}
         
+        
         />
       }
       
       
       )}
-      <AddNote handleAddNote={addnote} />
-      
+      <AddNote handleAddNote={addnote}
+      />      
     </div>
   )
 }

@@ -5,9 +5,13 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    margin: 10px;
+    margin-top: 10px;
     justify-content: space-between;
     height: 200px;
+}
+.header{
+    display:flex;
+    flex-direction: column;
 }
 .footer{
 display: flex;
@@ -19,13 +23,13 @@ margin: 0px;
 }
 .notes img{
     width: 20px;
+    margin-left: 10px;
 }
 
 .notesList{
    margin: 10px;
    display: grid;
    grid-template-columns: repeat(auto-fit,minmax(278px,0.1fr));
-  
   grid-gap:2rem;
 }
 
@@ -73,4 +77,38 @@ color: red;
 .title:focus{
     background-color:rgb(0, 255, 221);
     outline: 0px;
+}
+
+/* search bar  */
+
+.searchBar{
+    width: 50%;
+
+    display: flex;
+    margin: 10px;
+    background-color: rgb(231, 231, 231);
+
+    padding: 5px;
+     border-radius: 50px;
+    justify-content: space-between;
+    /* box-shadow: 0px 0px 10px 0.01px rgb(116, 116, 116); */
+}
+
+.searchBar img {
+width: 25px;
+height: auto;
+margin-left: 10px;
+padding-right: 10px;
+align-self: center;
+}
+.searchBar input{
+    background-color: rgb(231, 231, 231);
+    border: none;
+    width: 100%;
+}
+.searchBar input:focus{
+    background-color: rgb(231, 231, 231);
+
+    outline: none;
+    width: 100%;
 }

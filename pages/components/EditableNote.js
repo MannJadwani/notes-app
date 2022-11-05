@@ -1,22 +1,24 @@
 import React from 'react'
 import styles from './components.module.css'
-import { useState } from 'react'
-import { EditableNote } from './EditableNote'
-export const Note = ({id,title,text,date,DeleteButton}) => {
+export const EditableNote = ({id,title,text,date,DeleteButton,setMustEdit,setNewTitle,setNewText}) => {
  
-const [mustEdit,setMustEdit] = useState() 
-const [newTitle,setNewTitle]=useState(title)
-const [newText,setNewText]=useState(text)
- const handleEdit = () =>{
-  setMustEdit(true)
- }
-
-if(!mustEdit){
+const handleEdit = ()=>{
+    setMustEdit(false)
+} 
+const handleTitleEdit = (event)=>{
+    setNewTitle(event.target.value)
+}
+const handleTextEdit = (event)=>{
+    setNewText(event.target.value)
+    
+}
   return (
     <div className={styles.notes}>
-      <div className={styles.header }>
-      <h2>{newTitle}</h2>
-    <span >{newText}</span>
+      <div className={styles.header } >
+      <input 
+      value={title}
+      onChange={handleTitleEdit}/>
+    <textarea value={text} onChange={handleTextEdit}></textarea>
       </div>
     <div className={styles.footer}>
         <small>{date}</small>
@@ -29,16 +31,4 @@ if(!mustEdit){
     </div>
     </div>
   )
-}
-else{
-  return <EditableNote id={id}
-  title={newTitle}
-  text={newText}
-  date = {date}
-  DeleteButton = {DeleteButton}
-  setMustEdit = {setMustEdit}
-  setNewText= {setNewText}
-  setNewTitle = {setNewTitle}
-  />
-}
 }

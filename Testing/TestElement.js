@@ -14,17 +14,12 @@ export const TestElement = () => {
     })
 
     const[listState,setListState]=useState([dataList])
-    const[text,setText]=useState('')
+    const[text,setText]=useState()
     const handleSearch = (event) =>{
 setText(event.target.value)
 const newList = data.map((string)=>{
-if(string.includes(text)){
+if((string).includes(text)){
     return <h1>{string}</h1>
-}
-if(text==''){
-    data.map((string)=>{
-        return <h1>{string}</h1>
-    })
 }
 })
 setListState(newList)

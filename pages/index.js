@@ -4,6 +4,7 @@ import { NotesList } from './components/NotesList'
 import { useState } from 'react'
 import { TestElement } from '../Testing/TestElement'
 import { nanoid } from 'nanoid'
+import { Search } from './components/Search'
 
 
 export default function Home() {
@@ -27,9 +28,26 @@ const newNotes = notes.filter((note)=>note.id !== id)
 setNotes(newNotes)
 console.log(id)
 }
+
+const [SearchText,setSearchText]= useState(' ')
+ const handleSearch =(event)=>{
+ setSearchText(event.target.value)
+ }
+
+ 
+
   return (
     <div className={styles.container}>
-      <NotesList notes={notes} addnote={addnote} DeleteButton={DeleteButton}/>
+      <h1 className='Notes-Title'>Notes</h1>
+      <Search SearchText ={SearchText}
+      handleSearch = {handleSearch}
+      />
+      <NotesList notes={notes.filter((note)=>
+                note.text.includes(SearchText))} 
+                 addnote={addnote} 
+                 DeleteButton={DeleteButton}
+                 
+                 />
       {/* <TestElement/> */}
     </div>
   )

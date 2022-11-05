@@ -5,19 +5,27 @@ import styles from './components.module.css'
 export const AddNote = ({handleAddNote}) => {
 let[noteText,setNotesText]=useState('')
 let[titleText,setTitleText]=useState('')
+
+
+
+
+
 const handleTitleChange = (event)=>{
-  setTitleText(event.target.value)
+
+    setTitleText(event.target.value)
+  
   }
 const handleChange = (event)=>{
-setNotesText(event.target.value)
+    setNotesText(event.target.value)
 }
 const handleSaveClick =()=>{
 handleAddNote(noteText,titleText)
 setNotesText('')
 setTitleText('')
 
-
 }
+
+
   return (
     <div className={styles.AddNotes}>
 <input placeholder='Title' 
